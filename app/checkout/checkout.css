@@ -1,0 +1,370 @@
+.checkout-page {
+    padding: 2rem 0 4rem;
+    min-height: calc(100vh - 70px);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #FF4B2B;
+}
+
+.checkout-header {
+    margin-bottom: 2.5rem;
+}
+
+.checkout-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Steps */
+.checkout-steps {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+}
+
+.checkout-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-weight: 600;
+    color: #808080;
+    transition: all 0.3s;
+}
+
+.checkout-step.active .step-number {
+    background: linear-gradient(135deg, #FF4B2B 0%, #FF8C42 100%);
+    color: white;
+}
+
+.step-label {
+    color: #808080;
+    font-size: 0.875rem;
+}
+
+.checkout-step.active .step-label {
+    color: white;
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 1rem;
+}
+
+/* Layout */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Sections */
+.checkout-section {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.checkout-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkout-section h2 svg {
+    color: #FF4B2B;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-option input {
+    display: none;
+}
+
+.payment-option svg {
+    color: #a0a0a0;
+}
+
+.payment-option span {
+    font-size: 0.875rem;
+    color: #a0a0a0;
+}
+
+.payment-option.active {
+    border-color: #FF4B2B;
+    background: rgba(255, 75, 43, 0.1);
+}
+
+.payment-option.active svg,
+.payment-option.active span {
+    color: #FF8C42;
+}
+
+.payment-option:hover {
+    border-color: rgba(255, 75, 43, 0.5);
+}
+
+/* Card Form */
+.card-form,
+.upi-form {
+    margin-bottom: 2rem;
+}
+
+.netbanking-info,
+.cod-info {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    color: #a0a0a0;
+}
+
+.checkout-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.checkout-buttons .btn-primary {
+    min-width: 200px;
+}
+
+/* Sidebar */
+.order-summary-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.order-summary-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.summary-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.summary-item-info {
+    flex: 1;
+}
+
+.item-name {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.item-qty {
+    font-size: 0.75rem;
+    color: #808080;
+}
+
+.item-price {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.summary-totals {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+    color: #a0a0a0;
+}
+
+.summary-row.total {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Trust Badges */
+.trust-badges {
+    display: flex;
+    gap: 1rem;
+}
+
+.trust-badge {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #a0a0a0;
+}
+
+.trust-badge svg {
+    color: #00c853;
+}
+
+/* Order Success */
+.order-success {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #00c853 0%, #00e676 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: white;
+    animation: successPop 0.5s ease;
+}
+
+@keyframes successPop {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.order-success h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.order-id {
+    font-size: 1.25rem;
+    color: #FF8C42;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: #a0a0a0;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.success-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-methods {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .checkout-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .checkout-steps {
+        display: none;
+    }
+
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+}
