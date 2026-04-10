@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🥊 Edison Sports Official
 
-## Getting Started
+A full-stack e-commerce platform for combat sports equipment, built with **Next.js 16**, **MongoDB**, **Cloudinary**, and **Gemini AI**.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?logo=mongodb)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-Image%20Upload-blue?logo=cloudinary)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)
 
+## ✨ Features
+
+### 🛒 Customer Interface
+- **Product Catalog** — Browse products by category (Boxing, MMA, Karate, Taekwondo, Judo, Fitness)
+- **Product Detail Pages** — View product details with size/color selection
+- **Shopping Cart** — Add to cart, update quantities, remove items
+- **Checkout** — Complete order with customer details
+- **User Authentication** — Sign up, login, forgot password with reset code
+- **Account Management** — View profile and order history
+
+### 🤖 AI Chatbot
+- **Gemini AI-Powered** — Intelligent sports equipment assistant
+- **Product Recommendations** — Get personalized gear suggestions
+- **Real-time Chat** — Interactive conversation interface
+
+### 🔐 Admin Dashboard
+- **Dashboard Overview** — Revenue, orders, and product statistics
+- **Product Management** — Add, edit, delete products with image upload (Cloudinary)
+- **Order Management** — View and update order status
+- **Inline Price Editing** — Quick-edit prices directly in the product table
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| **Framework** | Next.js 16 (App Router) |
+| **Language** | TypeScript |
+| **Styling** | CSS + Tailwind CSS |
+| **Database** | MongoDB (Mongoose ODM) |
+| **Auth** | JWT + bcrypt |
+| **Image Storage** | Cloudinary |
+| **AI** | Google Gemini API |
+| **Icons** | Lucide React |
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- MongoDB (local or Atlas)
+- Cloudinary account
+- Gemini API key
+
+### Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/YOUR_USERNAME/edison-sports-nextjs.git
+cd edison-sports-nextjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Configure environment variables**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file:
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017/edison-sports
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-## Learn More
+4. **Run the development server**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. **Open** [http://localhost:3000](http://localhost:3000) in your browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Admin Access
+- **Username:** `admin`
+- **Password:** `edison2024`
+- **Admin Panel:** [http://localhost:3000/admin](http://localhost:3000/admin)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+edison-sports-nextjs/
+├── app/
+│   ├── api/                # API routes
+│   │   ├── auth/           # Login, register, password reset
+│   │   ├── chat/           # Gemini AI chatbot
+│   │   ├── orders/         # Order CRUD
+│   │   └── products/       # Product CRUD + image upload
+│   ├── admin/              # Admin dashboard pages
+│   ├── cart/               # Shopping cart page
+│   ├── checkout/           # Checkout page
+│   ├── login/              # Auth pages (login/register)
+│   ├── products/           # Product listing & detail pages
+│   ├── account/            # User account page
+│   └── page.tsx            # Homepage
+├── components/             # Reusable React components
+├── context/                # React Context (Auth, Cart)
+├── lib/                    # Database config & utilities
+└── public/                 # Static assets
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📜 API Endpoints
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/auth/login` | User/Admin login |
+| `POST` | `/api/auth/register` | User registration |
+| `POST` | `/api/auth/forgot-password` | Request password reset |
+| `POST` | `/api/auth/reset-password` | Reset password |
+| `GET` | `/api/products` | List all products |
+| `POST` | `/api/products` | Create product (Admin) |
+| `PUT` | `/api/products/[id]` | Update product (Admin) |
+| `DELETE` | `/api/products/[id]` | Delete product (Admin) |
+| `POST` | `/api/products/upload` | Upload image to Cloudinary |
+| `GET` | `/api/orders` | List orders |
+| `POST` | `/api/orders` | Create order |
+| `PUT` | `/api/orders/[id]` | Update order status (Admin) |
+| `POST` | `/api/chat` | AI chatbot |
+
+## 🌐 Deployment
+
+Deploy easily on [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/edison-sports-nextjs)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built with ❤️ by **Edison Sports Official**
